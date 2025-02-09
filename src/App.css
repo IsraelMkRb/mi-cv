@@ -1,0 +1,47 @@
+.markazi-text-400 {
+  font-family: "Markazi Text", serif;
+  font-optical-sizing: auto;  
+  font-style: normal;
+}
+
+.markazi-text-700 {
+  font-family: "Markazi Text", serif;
+  font-optical-sizing: auto;  
+  font-weight: 700;
+  font-style: normal; 
+}
+
+.roboto-flex-400 {
+  font-family: "Roboto Flex", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "slnt" 0,
+    "wdth" 100,
+    "GRAD" 0,
+    "XOPQ" 96,
+    "XTRA" 468,
+    "YOPQ" 79,
+    "YTAS" 750,
+    "YTDE" -203,
+    "YTFI" 738,
+    "YTLC" 514,
+    "YTUC" 712;
+}
+
+.fade-up {
+  animation: fade-up-animation 600ms ease-in-out;
+}
+
+@keyframes fade-up-animation {
+  from {
+    transform: translateY(6rem);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
