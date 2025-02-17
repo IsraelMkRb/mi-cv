@@ -1,6 +1,39 @@
+import { useEffect, useRef, useState } from "react";
+
 const Projects = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+      },
+      { threshold: 0.5 }
+    );
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+
+    return () => {
+      if (containerRef.current) {
+        observer.unobserve(containerRef.current);
+      }
+    };
+  }, []);
+
+  useEffect(()=>{
+    console.log({isVisible});
+  },[isVisible])
   return (
-    <div className="w-10/12 mx-auto mt-6 fade-up-delay-700 mb-12 grid grid-cols-6 lg:gap-1 rounded-md">
+    <div
+    ref={containerRef}
+        // fade-up-delay-700
+      className={`w-10/12 mx-auto mt-6 transition-opacity duration-300 mb-12 ${
+        isVisible ? "opacity-100" : "opacity-0"
+      } grid grid-cols-6 lg:gap-1 rounded-md`}
+    >
       <p className="p-4 roboto-flex-400 col-span-6 lg:col-span-3 border border-neutral-400 rounded-t-lg lg:rounded-lg bg-white shadow-md shadow-zinc-500">
         <span className="markazi-text-700 text-zinc-700 text-2xl">
           <strong>Chat y chatbot Whatsapp</strong>

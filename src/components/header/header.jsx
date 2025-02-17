@@ -107,7 +107,7 @@ const Header = () => {
       </div>
       {isModalInfoVisible && (
         <div className="fixed w-screen h-screen bg-zinc-800/50 flex flex-col justify-center items-center md:hidden">
-          <div className="w-3/4 h-3/5 bg-white border border-gray-500 rounded-lg p-4">
+          <div className="w-3/4 h-max bg-white border border-gray-500 rounded-lg p-4">
             <div>
               <p className="roboto-flex-700 text-neutral-800 inline-block">
                 Informacion Personal

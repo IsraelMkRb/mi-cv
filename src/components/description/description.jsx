@@ -14,7 +14,7 @@ const Description = () => {
           <strong>A cerca de mi...</strong>
         </p>
         <br />
-        <p className="roboto-flex-400 text-zinc-800">
+        <p className="roboto-flex-400 text-zinc-800 leading-5">
           Soy un desarrollador FullStack con experiencia en el sector
           farmacéutico, retail y de servicios de alimentos. Mi especialización
           radica en el desarrollo, implementación y optimización de sistemas

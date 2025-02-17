@@ -5,7 +5,7 @@ import Projects from "./components/projects/projects";
 
 function App() {
   return (
-    <main className="bg-gradient-to-t from-slate-200 to-slate-50 h-screen overflow-auto">
+    <main className="bg-gradient-to-t from-slate-200 to-slate-50 h-screen overflow-y-auto overflow-x-hidden">
       <Header />
       <Description />
       <Projects />
