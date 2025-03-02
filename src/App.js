@@ -1,6 +1,11 @@
+import { useState } from "react";
 import "./App.css";
 
 function App() {
+  const [moreInfoAboutMe, setMoreInfoAboutMe] = useState(false);
+
+  const handleClickMoreInfo = () => setMoreInfoAboutMe(!moreInfoAboutMe);
+
   return (
     <main className="h-screen w-screen m-0 p-0">
       <div className="fondo-acercade w-screen h-screen bg-slate-700 m-0 p-0">
@@ -14,11 +19,37 @@ function App() {
               height={150}
             />
 
-            <p className="text-2xl text-white roboto-700 p-4">Acerca de mi...</p>
+            <p className="text-2xl text-white roboto-700 p-4">
+              Acerca de mi...
+            </p>
             <br />
-            <p className="text-white inter-200 p-4">
+            <p
+              className="text-white inter-200 p-4"
+            >
               Soy desarrollador Full Stack con experiencia en el diseño e
               implementación de sistemas internos y plataformas eCommerce.
+              {!moreInfoAboutMe ? (
+                <button
+                  onClick={handleClickMoreInfo}
+                  className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                >
+                  Ver mas...
+                </button>
+              ) : (
+                <>
+                  Me especializo en backend con ASP.NET (C#, VB.NET) y
+                  Django/FastAPI, y en frontend con Next.js, Angular y Vue. Me
+                  apasiona crear soluciones escalables, optimizadas y seguras,
+                  siempre buscando mejorar la eficiencia y experiencia del
+                  usuario.
+                  <button
+                    onClick={handleClickMoreInfo}
+                    className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                  >
+                    Ver menos...
+                  </button>
+                </>
+              )}
             </p>
           </div>
         </div>
