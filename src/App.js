@@ -9,7 +9,7 @@ function App() {
   return (
     <main className="h-screen w-screen m-0 p-0">
       <div className="fondo-acercade w-screen h-screen bg-slate-700 m-0 p-0">
-        <div className="w-full h-full flex flex-col justify-center items-center">
+        <div className="md:hidden w-full h-full flex flex-col justify-center items-center">
           <div className="w-10/12 h-max mx-auto rounded-md bg-slate-700 border border-gray-400">
             <img
               src="/rostro_real.jpg"
