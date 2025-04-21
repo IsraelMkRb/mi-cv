@@ -11,10 +11,11 @@ const Presentation = () => {
                 siempre buscando mejorar la eficiencia y experiencia del
                 usuario."
       animateOn="view"
+      characters="01"
       sequential
-      speed={10}
+      speed={20}
       maxIterations={2}
-      encryptedClassName="inter-400 text-sm text-indigo-600"
+      encryptedClassName="text-indigo-600"
     />
   );
 };

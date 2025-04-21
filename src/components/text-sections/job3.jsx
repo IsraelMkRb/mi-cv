@@ -8,8 +8,8 @@ const Job3 = () => {
       sequential
       speed={10}
       maxIterations={2}
-      characters="abdc1234"
-      encryptedClassName="inter-400 text-sm text-indigo-600"
+      characters="01"
+      encryptedClassName="text-indigo-600"
     />
   );
 };
