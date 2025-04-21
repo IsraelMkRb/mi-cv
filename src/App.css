@@ -1,12 +1,15 @@
 body {
   overflow-x: hidden;
+
 }
 
 .fondo-acercade {
-  background-image: url("/public/codigo_imagen.png");
+  background-image: url("/public/fondo_codigo.png");
   background-repeat: no-repeat;
   background-position: left;
   background-size: cover;
+  backdrop-filter: blur(50px);
+  background-color: rgba(255, 255, 255, 0.3);
 }
 
 .inter-400 {
@@ -30,4 +33,47 @@ body {
   font-style: normal;
   font-variation-settings:
     "wdth" 100;
+}
+
+.montserrat-400 {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.animation-face {
+  animation: animation-face 3s ease-in-out;
+}
+
+@keyframes animation-face {
+  from {
+    transform: rotateY(90deg);
+  }
+
+  90% {
+    transform: rotateY(90deg);
+  }
+
+  to {
+    transform: rotateX(0);
+  }
+}
+
+.animation-next {
+  animation: animation-next 4s ease-in;
+}
+
+@keyframes animation-next {
+  from {
+    opacity: 0;
+  }
+
+  90% {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }

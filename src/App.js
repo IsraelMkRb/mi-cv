@@ -1,87 +1,87 @@
-import { useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import "./App.css";
-
+import Presentation from "./components/text-sections/presentation";
+import Job1 from "./components/text-sections/job1";
+import Job2 from "./components/text-sections/job2";
+import Job3 from "./components/text-sections/job3";
 function App() {
-  const [moreInfoAboutMe, setMoreInfoAboutMe] = useState(false);
+  const [currentNumPage, setCurrentNumPage] = useState(0);
+  const arrayPages = useMemo(
+    () => [<Presentation />, <Job1 />, <Job2 />, <Job3 />],
+    []
+  );
+  const [currentPage, setCurrentPage] = useState(arrayPages[currentNumPage]);
+  const handleNextClick = () => {
+    if (currentNumPage < arrayPages.length - 1) {
+      setCurrentNumPage(currentNumPage + 1);
+    }
+  };
 
-  const handleClickMoreInfo = () => setMoreInfoAboutMe(!moreInfoAboutMe);
+  useEffect(() => {
+    setCurrentPage(arrayPages[currentNumPage]);
+  }, [arrayPages, currentNumPage]);
 
   return (
-    <main className="h-screen w-screen m-0 p-0">
-      <div className="fondo-acercade w-screen h-screen bg-slate-700 m-0 p-0">
+    <main className="h-screen w-screen m-0 p-0 ">
+      <div className="fondo-acercade w-screen h-screen bg-indigo-950/95 m-0 p-0">
         <div className="md:hidden w-full h-full flex flex-col justify-center items-center">
-          <div className="w-10/12 h-max mx-auto rounded-md bg-slate-700 border border-gray-400">
+          <div className="w-10/12 h-max mx-auto rounded-md bg-indigo-950/95 border border-gray-400">
             <img
               src="/rostro_real.jpg"
               alt="descripcion_yo"
-              className="rounded-full bg-slate-700 mx-auto -mt-14"
+              className="rounded-full bg-indigo-950/95 mx-auto -mt-14 shadow-lg shadow-black"
               width={150}
               height={150}
             />
 
-            <p className="text-2xl text-white roboto-700 p-4">
-              Acerca de mi...
-            </p>
+            <p className="text-2xl text-white inter-400 p-4">Acerca de mi...</p>
             <br />
-            <p
-              className="text-white inter-200 p-4"
-            >
-              Soy desarrollador Full Stack con experiencia en el diseño e
-              implementación de sistemas internos y plataformas eCommerce.
-              {!moreInfoAboutMe ? (
-                <button
-                  onClick={handleClickMoreInfo}
-                  className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
-                >
-                  Ver mas...
-                </button>
-              ) : (
-                <>
-                  Me especializo en backend con ASP.NET (C#, VB.NET) y
-                  Django/FastAPI, y en frontend con Next.js, Angular y Vue. Me
-                  apasiona crear soluciones escalables, optimizadas y seguras,
-                  siempre buscando mejorar la eficiencia y experiencia del
-                  usuario.
-                  <button
-                    onClick={handleClickMoreInfo}
-                    className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
-                  >
-                    Ver menos...
-                  </button>
-                </>
-              )}
-            </p>
+            <p className="text-white inter-200 p-4">{currentPage}</p>
           </div>
         </div>
 
-        <div className="hidden md:grid grid-cols-2 h-full w-[90]">
+        <div className="hidden md:grid grid-cols-2 h-full w-[90] backdrop-blur-sm bg-transparent">
           <div className="flex flex-col justify-center ">
-            <div className="w-10/12 mx-auto p-11 rounded-md border border-gray-400 bg-slate-700">
-              <p className="text-4xl text-white roboto-700">Acerca de mi...</p>
+            <div className="w-10/12 mx-auto p-11 rounded-md border border-gray-400 bg-indigo-950/95">
+              <p className="text-4xl text-white inter-400">Acerca de mi...</p>
               <br />
-              <p className="text-white inter-400">
-                Soy desarrollador Full Stack con experiencia en el diseño e
-                implementación de sistemas internos y plataformas eCommerce. Me
-                especializo en backend con ASP.NET (C#, VB.NET) y
-                Django/FastAPI, y en frontend con Next.js, Angular y Vue. Me
-                apasiona crear soluciones escalables, optimizadas y seguras,
-                siempre buscando mejorar la eficiencia y experiencia del
-                usuario.
-              </p>
+              <span>No. Pag. {currentNumPage}</span>
+              <p className="text-white inter-400">{currentPage}</p>
+              <button
+                onClick={handleNextClick}
+                className="rounded-full border border/white float-right animation-next"
+              >
+                <svg
+                  className="w-6 h-6 text-white"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke="currentColor"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M19 12H5m14 0-4 4m4-4-4-4"
+                  />
+                </svg>
+              </button>
             </div>
           </div>
           <div className="flex flex-col justify-center items-center h-full">
             <img
               src="/rostro_real.jpg"
               alt="descripcion_yo"
-              className="rounded-full bg-slate-700"
+              className="rounded-full bg-slate-700 animation-face shadow-lg shadow-black"
               width={250}
               height={250}
             />
           </div>
         </div>
       </div>
-      
     </main>
   );
 }
