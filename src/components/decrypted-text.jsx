@@ -8,8 +8,8 @@ const styles = {
   },
   srOnly: {
     position: 'absolute',
-    width: '1px',
-    height: '1px',
+    width: '0.5px',
+    height: '0.5px',
     padding: 0,
     margin: '-1px',
     overflow: 'hidden',

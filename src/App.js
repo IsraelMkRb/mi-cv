@@ -52,7 +52,7 @@ function App() {
             <div className="w-11/12 mx-auto p-11 rounded-md border border-gray-400 bg-indigo-950/95">
               <p className="text-4xl text-white inter-400">Acerca de mi...</p>
               <br />
-              <p className="text-white inter-400">{currentPage}</p>
+              <p className="text-white font-mono">{currentPage}</p>
               <button
                 onClick={handleNextClick}
                 className="rounded-full border border/white float-right animation-next ml-3"
