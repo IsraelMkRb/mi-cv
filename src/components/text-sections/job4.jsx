@@ -13,12 +13,11 @@ const Job4 = () => {
         encryptedClassName="text-indigo-600"
       />
     ),
-    imagen: () => (
-      <div className="rounded-full bg-white animation-face shadow-lg shadow-black p-6">
+    imagen: ({className}) => (
+      <div className={className + " p-4 bg-white"}>
         <img
           src="/logo_omanu_labs.png"
           alt="descripcion_yo"
-          className=""
           width={250}
           height={250}
         />

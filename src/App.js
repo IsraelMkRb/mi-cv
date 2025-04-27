@@ -35,14 +35,7 @@ function App() {
         {/* Movil */}
         <div className="md:hidden w-full h-full flex flex-col justify-center items-center">
           <div className="w-10/12 h-max mx-auto rounded-md bg-indigo-950/95 border border-gray-400">
-            <img
-              src="/rostro_real.jpg"
-              alt="descripcion_yo"
-              className="rounded-full bg-indigo-950/95 mx-auto -mt-14 shadow-lg shadow-black"
-              width={150}
-              height={150}
-            />
-
+            {<currentPage.imagen className={"rounded-full bg-indigo-950/95 mx-auto -mt-14 shadow-lg shadow-black w-2/3"} />}
             <p className="text-2xl text-white inter-400 p-4">Acerca de mi...</p>
             <br />
             <p className="text-white font-mono p-4">
@@ -156,7 +149,7 @@ function App() {
             </div>
           </div>
           <div className="flex flex-col justify-center items-center h-full">
-            {<currentPage.imagen />}
+            {<currentPage.imagen className={"rounded-full bg-slate-700 animation-face shadow-lg shadow-black"} />}
           </div>
         </div>
       </div>

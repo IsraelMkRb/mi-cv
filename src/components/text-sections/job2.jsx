@@ -13,12 +13,11 @@ const Job2 = () => {
         encryptedClassName="text-indigo-600"
       />
     ),
-    imagen: () => (
-      <div className="rounded-full bg-white animation-face shadow-lg shadow-black p-6 ">
+    imagen: ({className}) => (
+      <div className={className + " p-6 bg-white"}>
       <img
       src="/advanced_system_logo.png"
       alt="descripcion_yo"
-      className=""
       width={250}
       height={250}      
       />

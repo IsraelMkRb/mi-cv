@@ -19,11 +19,11 @@ const Presentation = () => {
         encryptedClassName="text-indigo-600"
       />
     ),
-    imagen: () => (
+    imagen: ({ className }) => (
       <img
         src="/rostro_real.jpg"
         alt="descripcion_yo"
-        className="rounded-full bg-slate-700 animation-face shadow-lg shadow-black"
+        className={className}
         width={250}
         height={250}
       />

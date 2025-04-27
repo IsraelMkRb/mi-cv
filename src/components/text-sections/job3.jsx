@@ -13,14 +13,15 @@ const Job3 = () => {
         encryptedClassName="text-indigo-600"
       />
     ),
-    imagen: () => (
-      <img
-        src="/logo_freshco.jpg"
-        alt="descripcion_yo"
-        className="rounded-full bg-slate-700 animation-face shadow-lg shadow-black"
-        width={250}
-        height={250}
-      />
+    imagen: ({ className }) => (
+      <div className={className + " p-6 bg-white"}>
+        <img
+          src="/logo_freshco.jpg"
+          alt="descripcion_yo"
+          width={250}
+          height={250}
+        />
+      </div>
     ),
   };
 };

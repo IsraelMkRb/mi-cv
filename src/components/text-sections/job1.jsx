@@ -13,11 +13,11 @@ const Job1 = () => {
         encryptedClassName="text-indigo-600"
       />
     ),
-    imagen: () => (
+    imagen: ({className}) => (
       <img
         src="/logo_alsea.jpg"
         alt="descripcion_yo"
-        className="rounded-full bg-slate-700 animation-face shadow-lg shadow-black"
+        className={className}
         width={250}
         height={250}
       />
