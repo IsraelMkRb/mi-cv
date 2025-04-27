@@ -2,6 +2,7 @@ import DecryptedText from "../decrypted-text";
 
 const Presentation = () => {
   return {
+    titulo: "Acerca de mi",
     elementoTexto: () => (
       <DecryptedText
         text="Soy desarrollador Full Stack con experiencia en el diseño e
@@ -27,7 +28,7 @@ const Presentation = () => {
         width={250}
         height={250}
       />
-    ),
+    )
   };
 };
 

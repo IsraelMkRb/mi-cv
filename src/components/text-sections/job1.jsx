@@ -2,6 +2,7 @@ import DecryptedText from "../decrypted-text";
 
 const Job1 = () => {
   return {
+    titulo: "Vesa IT - Grupo Alsea (2018 - 2020)",
     elementoTexto: () => (
       <DecryptedText
         text="Comencé mi carrera brindando soporte a los sistemas de punto de venta como Micros Res 3700 y Aloha NCR. Posteriormente, desarrollé componentes y funcionalidades en VB.NET para dichos sistemas, participando en el ciclo completo del desarrollo: desde la toma de requerimientos y documentación, hasta las pruebas en conjunto con QA. Esta etapa me permitió comprender de primera mano la importancia de la estabilidad operativa en el entorno restaurantero."

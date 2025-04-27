@@ -35,34 +35,44 @@ function App() {
         {/* Movil */}
         <div className="md:hidden w-full h-full flex flex-col justify-center items-center">
           <div className="w-10/12 h-max mx-auto rounded-md bg-indigo-950/95 border border-gray-400">
-            {<currentPage.imagen className={"rounded-full bg-indigo-950/95 mx-auto -mt-14 shadow-lg shadow-black w-2/3"} />}
-            <p className="text-2xl text-white inter-400 p-4">Acerca de mi...</p>
+            {
+              <currentPage.imagen
+                className={
+                  "rounded-full bg-indigo-950/95 mx-auto -mt-14 shadow-lg shadow-black w-2/3"
+                }
+              />
+            }
+            <p className="text-2xl text-white inter-400 p-4">
+              {currentPage.titulo}
+            </p>
             <br />
             <p className="text-white font-mono p-4">
               {<currentPage.elementoTexto />}
             </p>
-            <button
-              onClick={handleNextClick}
-              className="rounded-full border border/white float-right animation-next mb-2 mr-3"
-            >
-              <svg
-                className="w-6 h-6 text-white"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                fill="none"
-                viewBox="0 0 24 24"
+            {currentNumPage + 1 < arrayPages.length && (
+              <button
+                onClick={handleNextClick}
+                className="rounded-full border border/white float-right animation-next mb-2 mr-3"
               >
-                <path
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M19 12H5m14 0-4 4m4-4-4-4"
-                />
-              </svg>
-            </button>
+                <svg
+                  className="w-6 h-6 text-white"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke="currentColor"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M19 12H5m14 0-4 4m4-4-4-4"
+                  />
+                </svg>
+              </button>
+            )}
             {currentNumPage > 0 && (
               <button
                 className="rounded-full border border/white float-right animation-next mb-2 mr-2"
@@ -93,7 +103,9 @@ function App() {
         <div className="hidden md:grid grid-cols-3 h-full w-[90] backdrop-blur-sm bg-transparent">
           <div className="flex flex-col justify-center col-span-2">
             <div className="w-11/12 mx-auto p-11 rounded-md border border-gray-400 bg-indigo-950/95">
-              <p className="text-4xl text-white inter-400">Acerca de mi...</p>
+              <p className="text-4xl text-white inter-400">
+                {currentPage.titulo}
+              </p>
               <br />
               <p className="text-white font-mono">
                 {<currentPage.elementoTexto />}
@@ -149,7 +161,13 @@ function App() {
             </div>
           </div>
           <div className="flex flex-col justify-center items-center h-full">
-            {<currentPage.imagen className={"rounded-full bg-slate-700 animation-face shadow-lg shadow-black"} />}
+            {
+              <currentPage.imagen
+                className={
+                  "rounded-full bg-slate-700 animation-face shadow-lg shadow-black"
+                }
+              />
+            }
           </div>
         </div>
       </div>
