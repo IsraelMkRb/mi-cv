@@ -46,7 +46,7 @@ function App() {
               {currentPage.titulo}
             </p>
             <br />
-            <p className="text-white font-mono p-4">
+            <p className="text-white texto-descripcion p-4">
               {<currentPage.elementoTexto />}
             </p>
             {currentNumPage + 1 < arrayPages.length && (
@@ -103,14 +103,15 @@ function App() {
         <div className="hidden md:grid grid-cols-3 h-full w-[90] backdrop-blur-sm bg-transparent">
           <div className="flex flex-col justify-center col-span-2">
             <div className="w-11/12 mx-auto p-11 rounded-md border border-gray-400 bg-indigo-950/95">
-              <p className="text-4xl text-white inter-400">
+              <p className="text-4xl text-slate-200 inter-400">
                 {currentPage.titulo}
               </p>
+              <hr />
               <br />
-              <p className="text-white font-mono">
+              <p className="text-white texto-descripcion mb-4">
                 {<currentPage.elementoTexto />}
               </p>
-              {currentNumPage + 1 < arrayPages.length && (
+              {currentNumPage + 1 < arrayPages.length ? (
                 <button
                   onClick={handleNextClick}
                   className="rounded-full border border/white float-right animation-next ml-3"
@@ -130,6 +131,26 @@ function App() {
                       strokeLinejoin="round"
                       strokeWidth="2"
                       d="M19 12H5m14 0-4 4m4-4-4-4"
+                    />
+                  </svg>
+                </button>
+              ) : (
+                <button className="rounded-full border border/white float-right animation-next ml-3">
+                  <svg
+                    class="w-6 h-6 text-white"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke="currentColor"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="m8 8-4 4 4 4m8 0 4-4-4-4m-2-3-4 14"
                     />
                   </svg>
                 </button>
