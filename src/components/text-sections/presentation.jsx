@@ -22,7 +22,7 @@ const Presentation = () => {
     ),
     imagen: ({ className }) => (
       <img
-        src="/rostro_real.jpg"
+        src="/rostro_real_v1.jpg"
         alt="descripcion_yo"
         className={className}
         width={250}
